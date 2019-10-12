@@ -53,30 +53,9 @@ app.get('/', (req, res) => res.send('This is the back-end of GameReviews'))
 app.get('/games', (req, res) => query.getGameData(req, res, db))
 // not sure about id here
 app.get('/reviews/:id', (req, res) => query.getGameReviewsData(req, res, db))
-
-app.get('/', (req, res) => res.send('hello world'))
-app.get('/crud', (req, res) => main.getTableData(req, res, db))
-app.post('/crud', (req, res) => main.postTableData(req, res, db))
-app.put('/crud', (req, res) => main.putTableData(req, res, db))
-app.delete('/crud', (req, res) => main.deleteTableData(req, res, db))
 */
 
 //server connection
 app.listen(process.env.PORT || port, () => {
   console.log(`GameReviews back-end is running on ${process.env.PORT || port}`);
 })
-
-
-//knex used for db connection and queries, could use pg insted??
-/*var db = require('knex')({
-  client: 'pg',
-  connection : {
-    host: '127.0.0.1',
-    user: 'user1',
-    password: 'password',
-    database: 'game_reviews'
-  }
-});
-*/
-//fetch api queries
-//const query = require('./api/queries');

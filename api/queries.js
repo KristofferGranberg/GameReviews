@@ -65,9 +65,9 @@ const id = parseInt(request.params.id)
 }
 /*
 TODO: Create post func that sums all game scores and takes average.
-then posts it to correct. 
+then posts it to correct.
 
-QUERY: 
+QUERY:
 */
 
 const createGame = (request, response)  => {
@@ -99,7 +99,7 @@ const updateGame = (request, response) => {
 
 const deleteGame = (request, response) => {
     const id = parseInt(request.params.id)
-  
+
     pool.query('DELETE FROM Game WHERE game_id = $1', [id], (error, results) => {
       if (error) {
         throw error
@@ -119,7 +119,7 @@ const deleteGame = (request, response) => {
       deleteGame,
   }
 
-  //get all games in db
+//get all games in db
 /*
 const getGameData = (req, res, db) => {
   db.select('*').from('Game').then(items => {
