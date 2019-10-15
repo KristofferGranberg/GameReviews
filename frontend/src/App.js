@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Container, Row, Col} from 'reactstrap'
-import ModalForm from './Component/Modals/Modal'
+import ReviewModal from './Component/Modals/Modal'
 import GameTable from './Component/Tables/GameTable'
 import {CSVLink} from 'react-csv' // ?
 
@@ -73,7 +73,7 @@ class App extends Component {
               data = {this.state.items}>
             CSV Download
             </CSVLink>
-            <ModalForm
+            <ReviewModal
               buttonLabel = "Add Game"
               addItemToState = {this.addItemToState}
           </Col>
