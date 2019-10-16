@@ -22,7 +22,7 @@ const db = require('./api/queries')
 const app = express();
 
 //app middleware
-const whitelist = ['http://localhost:3001']
+const whitelist = ['http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if(whitelist.indexOf(origin)!== -1 || !origin){

@@ -1,19 +1,18 @@
 import React, {Component} from 'react'
 import {Container, Row, Col} from 'reactstrap'
-import ReviewModal from './Component/Modals/Modal'
-import GameTable from './Component/Tables/GameTable'
+import ReviewModal from './Components/Modals/Modal'
+import GameTable from './Components/Tables/GameTable'
 import {CSVLink} from 'react-csv' // ?
 
 
 class App extends Component {
-  const port = 3009
 
   state = {
     items: []
   }
 
   getItems(){
-    fetch(`http://localhost:${port}/games`)
+    fetch('http://localhost:3009/games')
       .then( response => response.json())
       .then(items => this.setState({items}))
       .catch(err => console.log(err))
@@ -47,8 +46,8 @@ class App extends Component {
     this.getItems()
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Container className = "App">
         <Row>
           <Col>
@@ -75,7 +74,7 @@ class App extends Component {
             </CSVLink>
             <ReviewModal
               buttonLabel = "Add Game"
-              addItemToState = {this.addItemToState}
+              addItemToState = {this.addItemToState}/>
           </Col>
         </Row>
       </Container>
@@ -84,31 +83,3 @@ class App extends Component {
 }
 
 export default App
-
-
-
-// import React from 'react';
-// import './App.css';
-//
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-//
-// export default App;

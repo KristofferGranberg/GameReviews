@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Button, Modal, ModalHeader, ModalBody} from 'reactstrap'
-import AddEditFrom from '../Forms/AddEditForm'
+import AddEditForm from '../Forms/AddEditForm'
 
 class ReviewModal extends Component {
 
@@ -21,8 +21,8 @@ class ReviewModal extends Component {
     const closeBtn = <button className = "close" onClick = {this.toggle}>&times;</button>
     const label = this.props.buttonLabel
 
-    let button = "
-    let title = "
+    let button = ""
+    let title = ""
 
     if(label === "Edit"){
       button = <Button
@@ -33,7 +33,7 @@ class ReviewModal extends Component {
         title = 'Edit Item'
     } else {
       button = <Button
-        color = "succes"
+        color = "success"
         onClick = {this.toggle}
         style = {{float: "left", marginRight: "10px"}}>
         {label}</Button>
@@ -48,7 +48,7 @@ class ReviewModal extends Component {
           toggle = {this.toggle}
           className = {this.props.className}>
           <ModalBody>
-            <AddEditForm
+          <AddEditForm
               addItemToState = {this.props.addItemToState}
               updateState = {this.props.updateState}
               toggle = {this.toggle}
@@ -61,3 +61,11 @@ class ReviewModal extends Component {
 }
 
 export default ReviewModal
+
+/*
+            <AddEditForm
+              addItemToState = {this.props.addItemToState}
+              updateState = {this.props.updateState}
+              toggle = {this.toggle}
+              item =  {this.props.item}/>
+*/
