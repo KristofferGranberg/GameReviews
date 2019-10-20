@@ -1,10 +1,6 @@
 /*
 An express back-end for GameReviews project
 Author: Kristoffer Granberg
-
-Help:
-https://medium.com/@olinations/build-a-crud-template-using-react-bootstrap-express-postgres-9f84cc444438
-https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
 */
 const express = require('express')
 

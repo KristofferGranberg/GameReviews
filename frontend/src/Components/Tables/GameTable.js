@@ -23,11 +23,17 @@ class GameTable extends Component {
     }
   }
 
+  /*
+  rowClick = () => {
+    window.confirm('clicked')
+  }
+  */
+
   render(){
 
     const items = this.props.items.map(item => {
       return(
-        <tr key = {item.gamne_id}>
+        <tr key = {item.game_id} /*onClick = {this.rowClick} */>
           <th scope = "row">{item.game_id}</th>
           <td>{item.name}</td>
           <td>{item.description}</td>
@@ -35,9 +41,9 @@ class GameTable extends Component {
           <td>{item.average_score}</td>
           <td>
             <div style ={{width:"110px"}}>
-              <ReviewModal buttonLabel = "Edit" item = {item} updateState = {this.props.updateState}/>
+              <ReviewModal buttonLabel = "reviews" item = {item} updateState = {this.props.updateState} id = {item.game_id}/>
               {''}
-              <Button color = "danger" onClick = {() => this.deleteItem(item.id)}>Del</Button>
+              {/*<Button color = "danger" onClick = {() => this.deleteItem(item.id)}>Del</Button>*/}
             </div>
           </td>
         </tr>
@@ -53,7 +59,7 @@ class GameTable extends Component {
             <th>Description</th>
             <th>Price</th>
             <th>Average Score</th>
-            <th>Actions</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

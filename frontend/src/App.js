@@ -4,7 +4,6 @@ import ReviewModal from './Components/Modals/Modal'
 import GameTable from './Components/Tables/GameTable'
 import {CSVLink} from 'react-csv' // ?
 
-
 class App extends Component {
 
   state = {
@@ -12,7 +11,7 @@ class App extends Component {
   }
 
   getItems(){
-    fetch('http://localhost:3009/games')
+    fetch(`http://localhost:3009/games`)
       .then( response => response.json())
       .then(items => this.setState({items}))
       .catch(err => console.log(err))
@@ -49,11 +48,7 @@ class App extends Component {
   render() {
     return (
       <Container className = "App">
-        <Row>
-          <Col>
-          <h1 style = {{margin: "20px 0"}}> GameReviews </h1>
-          </Col>
-        </Row>
+        <h1 style = {{margin: "20px 0"}} align = 'center'> Game Reviews </h1>
         <Row>
           <Col>
             <GameTable
@@ -64,6 +59,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
+          {/*
             <CSVLink
               filename = {"db.csv"}
               color = "primary"
@@ -75,6 +71,7 @@ class App extends Component {
             <ReviewModal
               buttonLabel = "Add Game"
               addItemToState = {this.addItemToState}/>
+          */}
           </Col>
         </Row>
       </Container>
