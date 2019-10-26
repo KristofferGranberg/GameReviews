@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Table, Button} from 'reactstrap';
+import Linkify from 'react-linkify';
 
 class ReviewTable extends Component {
 
@@ -8,21 +9,24 @@ class ReviewTable extends Component {
     const items = this.props.items.map(item => {
       return(
         <tr key = {item.review_id}>
-          <th scope = "row">{item.review_id}</th>
+          
           <td>{item.site_name}</td>
           <td>{item.score}</td>
-          <td>{item.link}</td>
+          <td>{item.summary}</td>
+          <td>
+            <Linkify>{item.link}</Linkify>
+          </td>
         </tr>
       )
     })
 
     return(
-      <Table responsive hover>
+      <Table responsive striped>
         <thead>
           <tr>
-            <th>Review ID</th>
             <th>Site Name</th>
             <th>Score</th>
+            <th>Summary</th>
             <th>Link</th>
           </tr>
         </thead>

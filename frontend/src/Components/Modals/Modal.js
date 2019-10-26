@@ -62,6 +62,7 @@ class ReviewModal extends Component {
         <Modal
           isOpen = {this.state.modal}
           toggle = {this.toggle}
+          size = {"xl"}
           className = {this.props.className}>
           <ModalHeader>
             <h3 align = 'center'>

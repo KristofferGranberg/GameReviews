@@ -34,11 +34,13 @@ class GameTable extends Component {
     const items = this.props.items.map(item => {
       return(
         <tr key = {item.game_id} /*onClick = {this.rowClick} */>
-          <th scope = "row">{item.game_id}</th>
+         
           <td>{item.name}</td>
           <td>{item.description}</td>
           <td>{item.price}</td>
+          <td>SEK</td>
           <td>{item.average_score}</td>
+          <td>4</td>
           <td>
             <div style ={{width:"110px"}}>
               <ReviewModal buttonLabel = "reviews" item = {item} updateState = {this.props.updateState} id = {item.game_id}/>
@@ -51,14 +53,16 @@ class GameTable extends Component {
     })
 
     return(
-      <Table responsive hover>
+      <Table responsive striped >
         <thead>
           <tr>
-            <th>ID</th>
+            
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Currency</th>
             <th>Average Score</th>
+            <th>Nr Review</th>
             <th></th>
           </tr>
         </thead>
